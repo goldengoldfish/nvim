@@ -34,7 +34,7 @@ vim.o.smartcase = true
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 8
 
 -- Show <tab> and trailing spaces
 vim.o.list = true
@@ -91,4 +91,27 @@ vim.cmd('packadd! nohlsearch')
 -- [[ Install plugins ]]
 -- Nvim functionality can be extended by installing external plugins.
 -- One way to do it is with a built-in plugin manager. See `:h vim.pack`.
-vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+-- vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+
+--- CUSTOM OPTIONS POSTHASTE ---
+
+-- change colorscheme 
+if not pcall(vim.cmd.colorscheme, 'retrobox') then
+	vim.cmd.colorscheme('default')
+end
+
+vim.o.splitbelow = true
+vim.o.splitright = true
+
+vim.o.smartindent = true
+
+vim.o.tabstop = 4
+-- vim.o.shiftwidth = 4 -- set to tabstop by default
+-- vim.o.softtabstop = 4
+vim.o.expandtab = true
+
+-- keymap import from .vimrc
+vim.keymap.set({ 'n' }, 'j', 'gj')
+vim.keymap.set({ 'n' }, 'k', 'gk')
+vim.keymap.set({ 'n' }, 'L', '$')
+vim.keymap.set({ 'n' }, 'H', '^')
