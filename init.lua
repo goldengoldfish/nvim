@@ -3,6 +3,7 @@
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- [[ Setting options ]] See `:h vim.o`
 -- NOTE: You can change these options as you wish!
@@ -115,3 +116,6 @@ vim.keymap.set({ 'n' }, 'j', 'gj')
 vim.keymap.set({ 'n' }, 'k', 'gk')
 vim.keymap.set({ 'n' }, 'L', '$')
 vim.keymap.set({ 'n' }, 'H', '^')
+
+vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>');
+-- require("config.lazy")
